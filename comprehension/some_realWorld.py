@@ -117,3 +117,9 @@ products = [
 #     'mouse': 47.5,      # 5% off
 #     'tablet': 990.0     # 10% off
 # }
+filtered_products = {
+    name.lower(): (value * 0.90 if value > 1000 else value * 0.95)
+    for name, value, stock in products
+    if stock
+}
+print(filtered_products)
